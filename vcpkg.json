@@ -1,0 +1,8 @@
+{
+  "dependencies": [
+    "catch2",
+    "nlohmann-json"
+  ],
+  "name": "device-monitor",
+  "version": "1.0.0"
+}
