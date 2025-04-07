@@ -17,13 +17,7 @@ namespace DeviceMonitor::Devices {
     Monitor::Status FileDevice::fetch_current_state() {
         std::ifstream file(file_name, std::ios::in);
 
-        try {
-            auto status = extract(file);
-            file.close();
-            return std::move(status);
-        } catch(const std::exception& e) {
-            if (file.is_open()) file.close();
-            throw e;
-        }
+        auto status = extract(file);
+        return std::move(status);
     }
 }

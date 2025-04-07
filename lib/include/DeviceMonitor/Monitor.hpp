@@ -27,6 +27,7 @@ namespace DeviceMonitor {
 
         template<Derived<Device> T, typename ...Args> T& register_device(Args&&... args) {
             auto guard = std::lock_guard(infrequent_operations_mutex);
+            if (is_running.load()) throw std::exception("Cannot add device while monitor is running");
             // obtain next id
             auto id = nextId++;
             // construct and return device representation

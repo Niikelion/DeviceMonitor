@@ -5,7 +5,7 @@
 
 using namespace DeviceMonitor;
 
-TEST_CASE("MockDevice", "[unit]") {
+TEST_CASE("MockDevice uses provided function to construct current status", "[unit]") {
     SECTION("returned values are visible from outside and have expected types and values") {
         unsigned long long id = 7;
 
