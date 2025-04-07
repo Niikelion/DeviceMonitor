@@ -1,8 +1,7 @@
 #include <catch2/catch_test_macros.hpp>
-#include <catch2/matchers/catch_matchers_all.hpp>
 #include <DeviceMonitor/Devices.hpp>
-#include <functional>
 #include <filesystem>
+#include <functional>
 #include <streambuf>
 #include <fstream>
 
@@ -25,7 +24,7 @@ private:
     std::function<Monitor::Status(std::ifstream &)> generator;
 };
 
-TEST_CASE("FileDevice reads specified file and passes it to the extract method to construct status ", "[unit]") {
+TEST_CASE("FileDevice reads specified file and passes it to the extract method to construct status", "[unit]") {
     std::string file_name = "sample.txt";
     std::ofstream file{file_name};
     std::string file_content = "lorem ipsum dolores sit amet";

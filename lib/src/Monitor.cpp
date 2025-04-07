@@ -2,7 +2,7 @@
 #include "DeviceMonitor/Monitor.hpp"
 
 namespace DeviceMonitor {
-    Monitor::Monitor(float pooling_interval): pooling_interval(pooling_interval), nextId(0) {}
+    Monitor::Monitor(float pooling_interval): pooling_interval(pooling_interval), nextId() {}
     void Monitor::start() {
         auto guard = std::lock_guard(infrequent_operations_mutex);
         // early return when thread was already started

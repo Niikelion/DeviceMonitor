@@ -12,6 +12,7 @@ ENDFUNCTION(APPEND_EXT)
 set(TESTS
 	MockDevice
 	FileDevice
+	Monitor
 )
 
 APPEND_EXT(TESTS TESTS "cpp")
